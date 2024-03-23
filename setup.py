@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="cvdatasets",
+    name="computer_vision_datasets",
     version="0.1",
     packages=find_packages(),
     install_requires=[
@@ -12,7 +12,7 @@ setup(
     python_requires='>=3.6',
     author="Franco Marchesoni",
     author_email="marchesoniacland@gmail.com",
-    description="Easy Computer Vision Datasets ",
+    description="Easy Computer Vision Datasets",
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
 )
