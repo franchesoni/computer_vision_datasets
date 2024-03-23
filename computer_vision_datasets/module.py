@@ -20,8 +20,6 @@ class SegDataset:
     Args:
         ds_path (str): The path to the dataset directory.
         split (str, optional): The split of the dataset to load. Default is "train".
-        flip_mode (bool, optional): Whether to apply flip augmentation. Default is False.
-        special_ds_dir (str, optional): The name of a special directory in the dataset. Default is None.
 
     Raises:
         ValueError: If no directory is found for the specified split.
@@ -37,9 +35,8 @@ class SegDataset:
 
     """
 
-    def __init__(self, ds_path, split="train", flip_mode=False, special_ds_dir=None):
+    def __init__(self, ds_path, split="train"):
         assert split.lower() in ("train", "test")
-        self.flip_mode = flip_mode
 
         # Helper function to find case-insensitive match for directory names
         def find_dir(path, dir_name):
