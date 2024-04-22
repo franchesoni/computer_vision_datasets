@@ -8,6 +8,7 @@ setup(
         "tqdm",
         "opencv-python",
         "numpy",
+        "requests",
     ],  # Add your package dependencies here
     python_requires='>=3.6',
     author="Franco Marchesoni",
