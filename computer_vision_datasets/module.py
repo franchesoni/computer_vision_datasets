@@ -249,8 +249,11 @@ def download(
     dst_path = os.path.join(dst_dir, f"{dataset_name}.tar")
     if os.path.exists(dst_path):
         print(f"Dataset '{dataset}' already downloaded")
-        if unpack_archive and not os.path.isdir(os.path.splitext(dst_path)[0]):
-            return unpack_if_archive(dst_path)
+        if unpack_archive:
+            if not os.path.isdir(os.path.splitext(dst_path)[0]):
+                return unpack_if_archive(dst_path)
+            else:
+                return os.path.splitext(dst_path)[0]
         return dst_path
     else:
         os.makedirs(dst_dir)
