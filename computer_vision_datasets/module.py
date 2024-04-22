@@ -105,13 +105,14 @@ class SegDataset:
         # get image
         img = cv2.imread(imgpath, cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        height, width = img.shape[:2]
         # get annotation
         with open(annpath, "r") as f:
             ann = json.load(f)
         objects = ann["objects"]
 
         class_names = []
-        masks = np.zeros((len(objects), img.height, img.width), dtype=np.uint8)
+        masks = np.zeros((len(objects), height, width), dtype=np.uint8)
         for mind, obj in enumerate(objects):
             class_names.append(obj["classTitle"].lower().replace(" ", "-"))
             if "bitmap" in obj:
