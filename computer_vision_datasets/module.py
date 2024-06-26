@@ -257,7 +257,7 @@ def download(
                 return os.path.splitext(dst_path)[0]
         return dst_path
     else:
-        os.makedirs(dst_dir)
+        os.makedirs(dst_dir, exist_ok=True)
 
     data = get_released_datasets()
     try:
@@ -300,3 +300,7 @@ def get_released_datasets():
     response.raise_for_status()
     released_datasets = response.json()
     return released_datasets
+
+if __name__ == '__main__':
+    from fire import Fire
+    Fire({'list': get_released_datasets, 'download': download})
