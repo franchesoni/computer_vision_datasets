@@ -3,7 +3,7 @@
 [datasetninja.com](datasetninja.com) has an impressive collection of comptuer vision datasets. This package was built to let you easily download and use these computer vision datasets. 
 
 ## Installation
-`pip install computer_vision_datasets` should work. If not, go to the repository and paste the file in your code.
+Simply paste the only relevant file in this repo in your code.
 The repository is in [https://github.com/franchesoni/computer_vision_datasets](https://github.com/franchesoni/computer_vision_datasets).
 
 
