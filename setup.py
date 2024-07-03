@@ -15,7 +15,7 @@ setup(
         'console_scripts': [
             'list-ninja:computer_vision_datasets.module:print_datasets',
         ]
-    }
+    },
     python_requires='>=3.6',
     author="Franco Marchesoni",
     author_email="marchesoniacland@gmail.com",
