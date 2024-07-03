@@ -13,7 +13,7 @@ setup(
     ],  # Add your package dependencies here
     entry_points={
         'console_scripts': [
-            'list-ninja:computer_vision_datasets.module:print_datasets',
+            'list-ninja=computer_vision_datasets.module:print_datasets',
         ]
     },
     python_requires='>=3.6',
