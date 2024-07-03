@@ -35,7 +35,7 @@ class SegDataset:
 
     """
 
-    def __init__(self, ds_path, split="train"):
+    def __init__(self, ds_path, split="train", limit=None):
         assert split.lower() in ("train", "test")
 
         # Helper function to find case-insensitive match for directory names
@@ -80,6 +80,9 @@ class SegDataset:
             and Path(self.img_list[-1]).name.split(".")[0]
             == Path(self.ann_list[-1]).name.split(".")[0]
         ), "Number of images and annotations do not match"
+        if limit:
+            self.img_list = self.img_list[:limit]
+            self.ann_list = self.ann_list[:limit]
 
     def __len__(self):
         """
@@ -301,6 +304,9 @@ def get_released_datasets():
     released_datasets = response.json()
     return released_datasets
 
+def print_datasets():
+    print(sorted(get_released_datasets().keys()))
+
 if __name__ == '__main__':
     from fire import Fire
-    Fire({'list': get_released_datasets, 'download': download})
+    Fire({'list': print_datasets, 'download': download})
